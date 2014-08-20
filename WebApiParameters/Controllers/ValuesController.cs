@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System.Collections.Generic;
+using System.Web.Http;
 using WebApiParameters.Models;
 
 namespace WebApiParameters.Controllers
@@ -11,7 +12,7 @@ namespace WebApiParameters.Controllers
 		[HttpGet]
 		public string Get(int id)
 		{
-			return "value";
+			return "recieved: " + id;
 		}
 
 		// http://localhost:49407/api/values/example2?id1=1&id2=2&id3=3
@@ -49,9 +50,11 @@ namespace WebApiParameters.Controllers
 		// User-Agent: Fiddler
 		// Host: localhost:49407
 		// Content-Length: 32
-		// Content-Type: application/json
+		// Content-Type: application/x-www-form-urlencoded
 		//
 		// id1=1&id2=2&id3=3
+		//
+		// TODO <ParamsObject><Id1>7</Id1><Id2>8</Id2><Id3>9</Id3></ParamsObject>
 		// http://localhost:49407/api/values/example5
 		[Route("example5")]
 		[HttpPost]
@@ -60,7 +63,32 @@ namespace WebApiParameters.Controllers
 			return "value:" + paramsObject.Id1;
 		}
 
-		
+		[Route("example6")]
+		[HttpPost]
+		public string GetListWithBody([FromBody] List<int> paramsObject)
+		{
+			if (paramsObject != null && paramsObject.Count > 0)
+			{
+				return "recieved a list with length:" + paramsObject.Count;
+			}
 
+			return "NOTHING RECIEVED...";
+		}
+
+		// http://localhost:49407/api/values/example7?paramsObject=2,paramsObject=4,paramsObject=9
+		[Route("example7")]
+		[HttpGet]
+		public string GetListFromUri([FromUri] List<int> paramsObject)
+		{
+			if (paramsObject != null)
+			{
+				return "recieved a list with length:" + paramsObject.Count;
+			}
+
+			return "NOTHING RECIEVED...";
+		}
+
+		// TODO List from ModelBinder
+		// TODO List from AttributeActionFilter
 	}
 }
