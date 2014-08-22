@@ -54,7 +54,12 @@ namespace WebApiParameters.Controllers
 		//
 		// id1=1&id2=2&id3=3
 		//
-		// TODO <ParamsObject><Id1>7</Id1><Id2>8</Id2><Id3>9</Id3></ParamsObject>
+		// User-Agent: Fiddler
+        // Content-Type: application/xml
+        // Host: localhost:49407
+        // Content-Length: 65
+		//
+		// <ParamsObject><Id1>7</Id1><Id2>8</Id2><Id3>9</Id3></ParamsObject>
 		// http://localhost:49407/api/values/example5
 		[Route("example5")]
 		[HttpPost]
