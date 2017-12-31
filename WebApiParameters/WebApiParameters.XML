@@ -488,22 +488,22 @@
             <summary> Sending simple parameters in the Url </summary>
         </member>
         <member name="M:WebApiParameters.Controllers.ValuesController.GetWith3ParametersAttributeRouting(System.Int32,System.Int64,System.Double)">
-            <summary>  </summary>
+            <summary> Sending an object in the Url </summary>
         </member>
         <member name="M:WebApiParameters.Controllers.ValuesController.GetWithUri(WebApiParameters.Models.ParamsObject)">
-            <summary>  </summary>
+            <summary> Sending simple parameters using attribute routing </summary>
         </member>
         <member name="M:WebApiParameters.Controllers.ValuesController.GetWithBody(WebApiParameters.Models.ParamsObject)">
-            <summary>  </summary>
+            <summary> Sending an object in the Request body </summary>
         </member>
         <member name="M:WebApiParameters.Controllers.ValuesController.GetListFromUri(System.Collections.Generic.List{System.Int32})">
-            <summary>  </summary>
+            <summary> Sending a simple list in the Url </summary>
         </member>
         <member name="M:WebApiParameters.Controllers.ValuesController.GetListFromBody(System.Collections.Generic.List{WebApiParameters.Models.ParamsObject})">
-            <summary>  </summary>
+            <summary> Sending an object list in the Body </summary>
         </member>
         <member name="M:WebApiParameters.Controllers.ValuesController.GetListsFromBody(System.Collections.Generic.List{System.Collections.Generic.List{WebApiParameters.Models.ParamsObject}})">
-            <summary>  </summary>
+            <summary> Sending object lists in the Body </summary>
         </member>
     </members>
 </doc>

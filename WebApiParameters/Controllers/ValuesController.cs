@@ -7,6 +7,7 @@ namespace WebApiParameters.Controllers
 	[RoutePrefix("api/values")]
 	public class ValuesController : ApiController
 	{
+		/// <summary> Sending a simple parameter in the Url </summary>
 		// http://localhost:49407/api/values/example1?id=2
 		[Route("example1")]
 		[HttpGet]
@@ -26,6 +27,7 @@ namespace WebApiParameters.Controllers
 			return list;
 		}
 
+		/// <summary> Sending simple parameters in the Url </summary>
 		// http://localhost:49407/api/values/example2?id1=1&id2=2&id3=3
 		[Route("example2")]
 		[HttpGet]
@@ -34,6 +36,7 @@ namespace WebApiParameters.Controllers
 			return "value";
 		}
 
+		/// <summary> Sending an object in the Url </summary>
 		// http://localhost:49407/api/values/example3/2/3/4
 		[Route("example3/{id1}/{id2}/{id3}")]
 		[HttpGet]
@@ -42,6 +45,7 @@ namespace WebApiParameters.Controllers
 			return "value";
 		}
 
+		/// <summary> Sending simple parameters using attribute routing </summary>
 		// http://localhost:49407/api/values/example4?id1=1&id2=2&id3=3
 		[Route("example4")]
 		[HttpGet]
@@ -50,6 +54,7 @@ namespace WebApiParameters.Controllers
 			return "value:" + paramsObject.Id1;
 		}
 
+		/// <summary> Sending an object in the Request body </summary>
 		// User-Agent: Fiddler
 		// Host: localhost:49407
 		// Content-Length: 32
@@ -79,6 +84,7 @@ namespace WebApiParameters.Controllers
 			return "value:" + paramsObject.Id1;
 		}
 
+		/// <summary> Sending a simple list in the Url </summary>
 		// http://localhost:49407/api/values/example6?paramsObject=2,paramsObject=4,paramsObject=9
 		[Route("example6")]
 		[HttpGet]
@@ -92,6 +98,7 @@ namespace WebApiParameters.Controllers
 			return "NOTHING RECIEVED...";
 		}
 
+		/// <summary> Sending an object list in the Body </summary>
 		// Content-Type: application/json
 		// [{"Id1":3,"Id2":76,"Id3":19},{"Id1":56,"Id2":87,"Id3":94},{"Id1":976,"Id2":345,"Id3":7554}]
 		//
@@ -115,6 +122,7 @@ namespace WebApiParameters.Controllers
 			return "NOTHING RECIEVED...";
 		}
 
+		/// <summary> Sending object lists in the Body </summary>
 		[Route("example8")]
 		[HttpPost]
 		public string GetListsFromBody([FromBody] List<List<ParamsObject>> paramsList)
