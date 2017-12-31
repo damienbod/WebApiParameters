@@ -66,9 +66,9 @@ namespace WebApiParameters.Controllers
 		// id1=1&id2=2&id3=3
 		//
 		// User-Agent: Fiddler
-        // Content-Type: application/xml
-        // Host: localhost:49407
-        // Content-Length: 65
+		// Content-Type: application/xml
+		// Host: localhost:49407
+		// Content-Length: 65
 		//
 		// <ParamsObject><Id1>7</Id1><Id2>8</Id2><Id3>9</Id3></ParamsObject>
 		// http://localhost:49407/api/values/example5
@@ -97,10 +97,10 @@ namespace WebApiParameters.Controllers
 		//
 		// Content-Type: application/xml
 		// <ArrayOfParamsObject>
-        //   <ParamsObject><Id1>3</Id1><Id2>76</Id2><Id3>19</Id3></ParamsObject>
-        //   <ParamsObject><Id1>56</Id1><Id2>87</Id2><Id3>94</Id3></ParamsObject>
-        //   <ParamsObject><Id1>976</Id1><Id2>345</Id2><Id3>7554</Id3></ParamsObject>
-        // </ArrayOfParamsObject>
+		//	 <ParamsObject><Id1>3</Id1><Id2>76</Id2><Id3>19</Id3></ParamsObject>
+		//	 <ParamsObject><Id1>56</Id1><Id2>87</Id2><Id3>94</Id3></ParamsObject>
+		//	 <ParamsObject><Id1>976</Id1><Id2>345</Id2><Id3>7554</Id3></ParamsObject>
+		// </ArrayOfParamsObject>
 		//
 		// http://localhost:49407/api/values/example7
 		[Route("example7")]
